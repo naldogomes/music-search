@@ -5,7 +5,7 @@ import './Home.css';
 import logo from '../../assets/logo.png';
 
 
-export default function Home() {
+export default function Home({ history }) {
     const [search, setSearch] = useState('');
     const [select, setSelect] = useState('album');
 
@@ -14,14 +14,13 @@ export default function Home() {
 
         const correctedSearch = search.replace(/\s+/g, ' '); //removing consecutive spaces if there's any
         const artist = correctedSearch.split(' ').join('+'); //replacing spaces with +
-
-        const ENDPOINT = `/search?term=${artist}&entity=${select}`
         
-        const response = await api.get(ENDPOINT)
-
-        console.log(response.data);
-        
-
+        if(select === 'album') {
+            history.push(`/albums/${artist}`)
+        }
+        else {
+            history.push('/songs')
+        }
         
     }
 
