@@ -1,0 +1,33 @@
+.home-container {
+    display: flex;
+    justify-content: center;
+}
+
+.home-container form {
+    width: 90%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-container form select {
+    margin-top: 20px;
+    width: 94%;
+    font-size: 16px;
+    color: #665;
+}
+
+.home-container form input {
+    width: 90%;
+    height: 48px;
+    font-size: 16px;
+    color: #665
+}
+
+.home-container form input::placeholder {
+    color: 999;
+}
+
+.search-form {
+    margin-top: 30px;
+}
