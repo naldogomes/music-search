@@ -19,6 +19,8 @@
 }
 
 .songs-container ul li img {
+    align-self: center;
+    height: 100px;
     border-radius: 5px 5px 0 0;
 }
 

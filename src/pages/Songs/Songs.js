@@ -14,15 +14,8 @@ export default function Songs({ match }) {
         async function loadAlbums() {
             
             const response = await api.get(ENDPOINT)
-
-            // console.log(response.data.results[0]);
-            
-
-            setSongs(response.data.results);
-
-
-            console.log(songs);
-            
+        
+            setSongs(response.data.results); 
         }
 
         loadAlbums();
