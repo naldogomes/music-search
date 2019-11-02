@@ -1,8 +1,48 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Songs.css'
 
-export default function Songs() {
+import logo from '../../assets/logo.png'
+import api from '../../services/api';
+
+export default function Songs({ match }) {
+    const [ songs, setSongs ] = useState([]);
+    const { artist } = match.params;
+
+    const ENDPOINT = `/search?term=${artist}&entity=song` 
+
+    useEffect(() => {
+        async function loadAlbums() {
+            
+            const response = await api.get(ENDPOINT)
+
+            // console.log(response.data.results[0]);
+            
+
+            setSongs(response.data.results);
+
+
+            console.log(songs);
+            
+        }
+
+        loadAlbums();
+    }, [artist])
+
     return (
-        <h1>Songs Page</h1>
+        <div className="songs-container">
+            <img src={logo} alt="Music Search" />
+            <ul>
+                {songs.map(song => (
+                    <li key={song.trackId}>
+                        <img src={song.artworkUrl100} alt={song.trackName} />
+                        <footer>
+                            <strong>{song.trackName}</strong>
+                            <p>{parseInt(song.releaseDate)}</p>
+                            <p>{song.trackCount} tracks</p>
+                        </footer>
+                    </li>
+                ))}
+            </ul>
+        </div>
     )
 }

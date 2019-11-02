@@ -19,7 +19,7 @@ export default function Home({ history }) {
             history.push(`/albums/${artist}`)
         }
         else {
-            history.push('/songs')
+            history.push(`/songs/${artist}`)
         }
         
     }

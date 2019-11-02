@@ -19,11 +19,11 @@
 }
 
 .albums-container ul li img {
-    max-width: 100%;
     border-radius: 5px 5px 0 0;
 }
 
-.albums-container ul li card {
+.albums-container ul li footer {
+    flex: 1;
     background: #FFF;
     border: 1px solid #eee;
     padding: 15px 20px;
@@ -31,12 +31,12 @@
     border-radius: 0 0 5px 5px;
 }
 
-.albums-container ul li card strong {
+.albums-container ul li footer strong {
     font-size: 16px;
     color: #333;
 }
 
-.albums-container ul li card p {
+.albums-container ul li footer p {
     font-size: 14px;
     line-height: 20px;
     color: #999;

@@ -1,0 +1,44 @@
+.songs-container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.songs-container ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 30px;
+    margin-top: 50px;
+}
+
+.songs-container ul li {
+    display: flex;
+    flex-direction: row;
+}
+
+.songs-container ul li img {
+    border-radius: 5px 5px 0 0;
+}
+
+.songs-container ul li footer {
+    flex: 1;
+    background: #FFF;
+    border: 1px solid #eee;
+    padding: 15px 20px;
+    text-align: left;
+    border-radius: 0 0 5px 5px;
+}
+
+.songs-container ul li footer strong {
+    font-size: 16px;
+    color: #333;
+}
+
+.songs-container ul li footer p {
+    font-size: 14px;
+    line-height: 20px;
+    color: #999;
+    margin-top: 5px;
+}

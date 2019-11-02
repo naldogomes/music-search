@@ -5,7 +5,7 @@ import logo from '../../assets/logo.png'
 import api from '../../services/api';
 
 export default function Albums({ match }) {
-    const [ albums, setalbums ] = useState([]);
+    const [ albums, setAlbums ] = useState([]);
     const { artist } = match.params;
 
     const ENDPOINT = `/search?term=${artist}&entity=album`  
@@ -15,14 +15,7 @@ export default function Albums({ match }) {
             
             const response = await api.get(ENDPOINT)
 
-            // console.log(response.data.results[0]);
-            
-
-            setalbums(response.data.results);
-
-
-            console.log(albums);
-            
+            setAlbums(response.data.results);      
         }
 
         loadAlbums();
@@ -33,13 +26,13 @@ export default function Albums({ match }) {
             <img src={logo} alt="Music Search" />
             <ul>
                 {albums.map(album => (
-                    <li>
-                        <img src={album.artworkUrl100} alt="Album" />
-                        <card>
+                    <li key={album.collectionId}>
+                        <img src={album.artworkUrl100} alt={album.collectionName} />
+                        <footer>
                             <strong>{album.collectionName}</strong>
                             <p>{parseInt(album.releaseDate)}</p>
                             <p>{album.trackCount} tracks</p>
-                        </card>
+                        </footer>
                     </li>
                 ))}
             </ul>

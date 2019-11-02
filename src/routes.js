@@ -10,7 +10,7 @@ export default function Routes() {
         <BrowserRouter>
             <Route path="/" exact component={Home} />
             <Route path="/albums/:artist" component={Albums} />
-            <Route path="/songs" component={Songs} />
+            <Route path="/songs/:artist" component={Songs} />
         </BrowserRouter>
     )
 }
