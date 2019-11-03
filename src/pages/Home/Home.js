@@ -11,17 +11,13 @@ export default function Home({ history }) {
     const [ content, setContent ] = useState([]);
     const [ containerType, setContainerType ] = useState('');
 
-    updateWindowDimensions = updateWindowDimensions.bind(this);
-
     useEffect(() => {
         setContent([]); 
         updateWindowDimensions();
         window.addEventListener('resize', updateWindowDimensions);
 
-        const ENDPOINT = `/search?term=album&entity=${select}&limit=100` 
-
         async function loadContent() {
-            
+            const ENDPOINT = `/search?term=album&entity=${select}&limit=100` 
             const response = await api.get(ENDPOINT)
 
             setContent(response.data.results);      
@@ -52,7 +48,11 @@ export default function Home({ history }) {
         e.preventDefault();
 
         const correctedSearch = search.replace(/\s+/g, ' '); //removing consecutive spaces if there's any
-        const artist = correctedSearch.split(' ').join('+'); //replacing spaces with +
+        let artist = correctedSearch.split(' ').join('+'); //replacing spaces with +
+
+        if(artist === '') {
+            artist = ' ';
+        }
         
         if(select === 'album') {
             history.push(`/albums/${artist}`)
@@ -65,10 +65,10 @@ export default function Home({ history }) {
     return (
         <div className="home-container">
             <div className = "nav-bar">
-                <p>Home</p>
-                <p>Albums</p>
-                <p>Songs</p>
-                <p>Login</p>
+                <button style={{fontWeight:'bold'}}>Home</button>
+                <button>Albums</button>
+                <button>Songs</button>
+                <button>Login</button>
             </div>
             <div className="form-container">
                 <form onSubmit={handleSubmit}>
@@ -94,7 +94,7 @@ export default function Home({ history }) {
             <div className="list-container">
                 <ul id={containerType}>
                         {content.map(content => (
-                            <li key={content.collectionId}>
+                            <li key={select === 'album'? content.collectionId : content.trackId}>
                                 <img src={content.artworkUrl100} alt={content.collectionName} />
                                 <footer>
                                     <strong>{select === 'album'? content.collectionName : content.trackName}</strong>

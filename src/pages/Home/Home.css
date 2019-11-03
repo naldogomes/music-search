@@ -11,9 +11,10 @@
     padding: 0 30px 0 30px;
 }
 
-.nav-bar p {
-    margin-top: 10px;
-    font-weight: bold;
+.nav-bar button {
+    /* font-weight: bold; */
+    background: #66FFB9;
+    border: 0 solid #66FFB9;
     color: #FF00C0;
 }
 
@@ -68,10 +69,6 @@
     align-self: center;
     margin: auto;
     margin-left: -5px;
-}
-
-.icon {
-    
 }
 
 .form-container form input::placeholder {

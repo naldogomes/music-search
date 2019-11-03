@@ -1,3 +1,76 @@
+.songs-page-container {
+    height: 100%;
+}
+
+.nav-bar {
+    height: 40px;
+    background: #66FFB9;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 30px 0 30px;
+}
+
+.nav-bar button {
+    /* font-weight: bold; */
+    background: #66FFB9;
+    border: 0 solid #66FFB9;
+    color: #FF00C0;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.form-container form {
+    width: 90%;
+    max-width: 400px;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.form-container form select {
+    width: 94%;
+    font-size: 16px;
+    color: #665;
+}
+
+.form-container form img {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.input-content {
+    margin-top: 10px;
+    height: 70px;
+    width: 95%;
+    background: #66FFB9;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+.input-content input {
+    margin: auto auto;
+    width: 75%;
+    height: 48px;
+    font-size: 16px;
+    color: #665;
+    border-radius: 15px;
+}
+
+.icon-content {
+    height: 40px;
+    width: 40px;
+    background: #FF00C0;
+    border: 2px solid #FFF;
+    border-radius: 5px;
+    align-self: center;
+    margin: auto;
+    margin-left: -5px;
+}
+
 /* Mobile config */
 .songs-container ul#mobile {
     list-style: none;
