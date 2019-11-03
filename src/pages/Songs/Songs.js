@@ -20,14 +20,14 @@ export default function Songs({ match }) {
         updateWindowDimensions();
         window.addEventListener('resize', updateWindowDimensions);
 
-        async function loadAlbums() {
+        async function loadSongs() {
             
             const response = await api.get(ENDPOINT)
         
             setSongs(response.data.results); 
         }
 
-        loadAlbums();
+        loadSongs();
     }, [artist])
 
     useEffect(() => {
