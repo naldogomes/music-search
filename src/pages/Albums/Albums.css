@@ -1,16 +1,36 @@
-.albums-container {
-    max-width: 980px;
-    margin: 0 auto;
-    padding: 50px 0;
-    text-align: center;
-}
-
-.albums-container ul {
+/* Mobile config */
+.albums-container ul#mobile {
     list-style: none;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 30px;
     margin-top: 50px;
+}
+
+/* Desktop config*/
+.albums-container ul#desktop {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+    margin-top: 50px;
+}
+
+/* All screen types config*/
+.albums-container ul#large {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    margin-top: 50px;
+}
+
+.albums-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px 0;
+    text-align: center;
 }
 
 .albums-container ul li {
@@ -44,3 +64,6 @@
     color: #999;
     margin-top: 5px;
 }
+
+
+
