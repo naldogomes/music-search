@@ -15,6 +15,8 @@ export default function Albums({ history, match }) {
 
     useEffect(() => {
         setAlbums([]);
+        let correctedSearch = artist.split('+').join(' ');
+        setSearch(correctedSearch);
         updateWindowDimensions();
         window.addEventListener('resize', updateWindowDimensions);
 
@@ -58,13 +60,21 @@ export default function Albums({ history, match }) {
         
         history.push(`/albums/${artist}`)
     }
+
+    function gotoHome() {
+        history.push(`/`)
+    }
+
+    function gotoSongs() {
+        history.push(`/songs/${artist}`)
+    }
     
     return (
         <div className="albums-page-container">
             <div className = "nav-bar">
-                <button>Home</button>
+                <button onClick={gotoHome}>Home</button>
                 <button style={{fontWeight:'bold'}}>Albums</button>
-                <button>Songs</button>
+                <button onClick={gotoSongs}>Songs</button>
                 <button>Login</button>
             </div>
             <div className="form-container">

@@ -62,12 +62,20 @@ export default function Home({ history }) {
         }  
     }
 
+    function gotoAlbums() {
+        history.push(`/albums/ `)
+    }
+
+    function gotoSongs() {
+        history.push(`/songs/ `)
+    }
+
     return (
         <div className="home-container">
             <div className = "nav-bar">
                 <button style={{fontWeight:'bold'}}>Home</button>
-                <button>Albums</button>
-                <button>Songs</button>
+                <button onClick={gotoAlbums}>Albums</button>
+                <button onClick={gotoSongs}>Songs</button>
                 <button>Login</button>
             </div>
             <div className="form-container">
