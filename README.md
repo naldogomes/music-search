@@ -1,3 +1,12 @@
+## To run this project:
+
+$ git clone https://github.com/naldogomes/music-search.git
+$ cd music-search
+$ yarn install
+$ yarn start
+
+If you get any cors blocking or network error problem, please consider instaling cors extension on your navigator and enable it.
+
 ## Available Scripts
 
 In the project directory, you can run:
