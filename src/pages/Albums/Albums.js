@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import './Albums.css'
 
-import logo from '../../assets/logo.png'
+import logo from '../../assets/logo.svg'
 import api from '../../services/api';
 
 export default function Albums({ match }) {

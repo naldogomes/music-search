@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { FaSearch } from 'react-icons/fa'
 import api from '../../services/api';
 import './Home.css';
 
-import logo from '../../assets/logo.png';
-
+import logo from '../../assets/logo.svg';
 
 export default function Home({ history }) {
     const [ search, setSearch ] = useState('');
@@ -64,19 +64,30 @@ export default function Home({ history }) {
 
     return (
         <div className="home-container">
+            <div className = "nav-bar">
+                <p>Home</p>
+                <p>Albums</p>
+                <p>Songs</p>
+                <p>Login</p>
+            </div>
             <div className="form-container">
                 <form onSubmit={handleSubmit}>
-                <img src={logo} alt="Music Search" />
+                    <img src={logo} alt="Music Search" />
                     <div className="search-form">
                         <select value={select} onChange={e => setSelect(e.target.value)}>
                             <option value="album">Albums</option>
                             <option value="song">Songs</option>
                         </select>
-                        <input
-                            placeholder="Search artist"
-                            value={search}
-                            onChange={e => setSearch(e.target.value)}
-                        />
+                        <div className="input-content">
+                            <input
+                                placeholder="Search artist"
+                                value={search}
+                                onChange={e => setSearch(e.target.value)}
+                            />
+                            <div style={{color: '#FFF'}} className="icon-content" onClick={handleSubmit}>
+                                <FaSearch size={20} style={{ marginLeft:10, marginTop: 10 }}/>
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>
